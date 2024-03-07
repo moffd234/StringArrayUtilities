@@ -1,9 +1,6 @@
 package com.zipcodewilmington;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * Created by leon on 1/29/18.
@@ -63,7 +60,7 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @return true if the order of the array is the same backwards and forwards
      */
-    // TODO 
+    // TODO
     public static boolean isPalindromic(String[] array) {
         String[] reversedArray = reverse(array);
 
@@ -91,18 +88,30 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @param value value to check array for
      * @return number of occurrences the specified `value` has occurred
-     */ // TODO
+     */
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        int total = 0;
+        for(String i : array){
+            if((i.equals(value))){
+                total += 1;
+            }
+        }
+        return total;
     }
 
     /**
      * @param array         array of String objects
      * @param valueToRemove value to remove from array
      * @return array with identical contents excluding values of `value`
-     */ // TODO
+     */
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+        ArrayList<String> newArray = new ArrayList<>();
+        for (String i : array) {
+            if (!i.equals(valueToRemove)) {
+                newArray.add(i);
+            }
+        }
+        return newArray.toArray(new String[0]);
     }
 
     /**
@@ -110,6 +119,7 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
+        
         return null;
     }
 
