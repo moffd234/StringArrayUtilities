@@ -117,10 +117,16 @@ public class StringArrayUtils {
     /**
      * @param array array of chars
      * @return array of Strings with consecutive duplicates removes
-     */ // TODO
+     */
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        
-        return null;
+        ArrayList<String> newArray = new ArrayList<>();
+        for(int i = 0; i < array.length - 1; i++){
+            if(!array[i].equals(array[i + 1])){
+                newArray.add(array[i]);
+            }
+        }
+        newArray.add(array[array.length-1]);
+        return newArray.toArray(new String[0]);
     }
 
     /**
